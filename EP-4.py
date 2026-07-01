@@ -71,6 +71,15 @@ def actualizar_estados(lista_estudiantes):
         estudiante["aprobado"] = estudiante["nota"] >= NOTA_MINIMA_APROBACION
 
 
+def calcular_promedio(lista_estudiantes):
+    if not lista_estudiantes:
+        return 0.0
+    suma_notas = 0.0
+    for estudiante in lista_estudiantes:
+        suma_notas = suma_notas + estudiante["nota"]
+    return suma_notas / len(lista_estudiantes)
+
+
 def mostrar_estudiantes(lista_estudiantes):
     actualizar_estados(lista_estudiantes)
 
@@ -87,6 +96,9 @@ def mostrar_estudiantes(lista_estudiantes):
         print(f"Nota: {estudiante['nota']}")
         print(f"Estado: {estado}")
         print("*" * 45)
+
+    promedio = calcular_promedio(lista_estudiantes)
+    print(f"\nPromedio general del curso: {round(promedio, 2)}")
 
 
 def programa_principal():
