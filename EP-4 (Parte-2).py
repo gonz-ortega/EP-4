@@ -66,7 +66,7 @@ def buscar_estudiante(lista_estudiantes, nombre):
     for indice in range(len(lista_estudiantes)):
         if lista_estudiantes[indice]["nombre"] == nombre:
             return indice
-        return -1
+    return -1
 
 def actualizar_estados(lista_estudiantes):
     for estudiante in lista_estudiantes:
@@ -116,7 +116,7 @@ def programa_principal():
             nombre = input("Ingrese el nombre del estudiante a buscar: ")
             posicion = buscar_estudiante(lista_estudiantes, nombre)
             if posicion != -1:
-                lista_estudiantes[posicion]
+                estudiante = lista_estudiantes[posicion]
                 estado = "APROBADO" if estudiante["aprobado"] else "REPROBADO"
                 print(f"Estudiante encontrado e la posicion {posicion}.")
                 print(f"Nombre: {estudiante['nombre']}")
